@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration System</title>
+<style>
+  :root{
+    --ink:#1c2331;
+    --paper:#f6f4ee;
+    --line:#1c2331;
+    --accent:#2f5233;
+    --accent-2:#a5402d;
+    --field-bg:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Georgia','Times New Roman',serif;
+    line-height:1.5;
+  }
+  header{
+    border-bottom:3px solid var(--line);
+    padding:2rem 1.5rem 1.5rem;
+    text-align:center;
+  }
+  header h1{
+    margin:0;
+    font-size:2rem;
+    letter-spacing:0.02em;
+  }
+  header p{
+    margin:0.4rem 0 0;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#555;
+    font-size:0.95rem;
+  }
+  main{
+    max-width:780px;
+    margin:0 auto;
+    padding:2rem 1.5rem 4rem;
+  }
+  section{
+    margin-bottom:3rem;
+  }
+  h2{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1.05rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    border-bottom:2px solid var(--line);
+    padding-bottom:0.5rem;
+    margin-bottom:1.3rem;
+  }
+  form{
+    display:flex;
+    flex-direction:column;
+    gap:1.1rem;
+  }
+  .field{
+    display:flex;
+    flex-direction:column;
+    gap:0.35rem;
+  }
+  label{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:0.9rem;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
+  select,
+  textarea{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1rem;
+    padding:0.6rem 0.7rem;
+    border:1px solid #9a9385;
+    background:var(--field-bg);
+    color:var(--ink);
+    border-radius:2px;
+  }
+  textarea{
+    resize:vertical;
+    min-height:5rem;
+  }
+  fieldset{
+    border:1px solid #9a9385;
+    border-radius:2px;
+    padding:0.8rem 1rem;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+  legend{
+    font-size:0.9rem;
+    padding:0 0.4rem;
+  }
+  .choice-row{
+    display:flex;
+    gap:1.4rem;
+    flex-wrap:wrap;
+    margin-top:0.3rem;
+  }
+  .choice-row label{
+    display:flex;
+    align-items:center;
+    gap:0.4rem;
+    font-size:0.95rem;
+  }
+  button{
+    align-self:flex-start;
+    margin-top:0.5rem;
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    padding:0.7rem 1.6rem;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:0.95rem;
+    cursor:pointer;
+    border-radius:2px;
+  }
+  button:hover{
+    background:#233d26;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:0.92rem;
+  }
+  caption{
+    text-align:left;
+    font-size:0.85rem;
+    color:#555;
+    margin-bottom:0.6rem;
+  }
+  th, td{
+    border:2px solid var(--ink);
+    padding:0.65rem 0.7rem;
+    text-align:left;
+  }
+  th{
+    background:#b39ddb;
+    color:#1c2331;
+    font-weight:normal;
+  }
+  tbody tr:nth-child(even){
+    background:#eeece3;
+  }
+  footer{
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:0.8rem;
+    color:#777;
+    padding:1.5rem;
+    border-top:1px solid #ccc;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Student Registration System</h1>
+  <p>Enrollment form and student records</p>
+</header>
+
+<main>
+
+  <section aria-labelledby="form-heading">
+    <h2 id="form-heading">Registration Form</h2>
+    <form id="registrationForm" action="#" method="post">
+
+      <div class="field">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Troy Gwapo" required>
+      </div>
+
+      <div class="field">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="troy.gwapo123@example.com" required>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" minlength="8" required>
+      </div>
+
+      <div class="field">
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" min="15" max="100" value="18" required>
+      </div>
+
+      <div class="field">
+        <label for="birthdate">Date of Birth</label>
+        <input type="date" id="birthdate" name="birthdate" required>
+      </div>
+
+      <fieldset class="field">
+        <legend>Gender</legend>
+        <div class="choice-row">
+          <label><input type="radio" name="gender" value="Female" checked> Female</label>
+          <label><input type="radio" name="gender" value="Male"> Male</label>
+          <label><input type="radio" name="gender" value="Other"> Other</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="field">
+        <legend>Areas of Interest</legend>
+        <div class="choice-row">
+          <label><input type="checkbox" name="interests" value="Academics" checked> Academics</label>
+          <label><input type="checkbox" name="interests" value="Sports"> Sports</label>
+          <label><input type="checkbox" name="interests" value="Arts"> Arts</label>
+          <label><input type="checkbox" name="interests" value="Technology"> Technology</label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="yearLevel">Year Level</label>
+        <select id="yearLevel" name="yearLevel" required>
+          <option value="">Select year level</option>
+          <option value="1st Year">1st Year</option>
+          <option value="2nd Year">2nd Year</option>
+          <option value="3rd Year">3rd Year</option>
+          <option value="4th Year">4th Year</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="address">Home Address</label>
+        <textarea id="address" name="address" placeholder="House No., Street, Barangay, City" required></textarea>
+      </div>
+
+      <button type="submit">Register Student</button>
+    </form>
+  </section>
+
+  <section aria-labelledby="table-heading">
+    <h2 id="table-heading">Registered Students</h2>
+    <table>
+      <caption>Current enrollment records</caption>
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Full Name</th>
+          <th>Course</th>
+          <th>Year Level</th>
+          <th>Email Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>5250982</td>
+          <td>Rhian Marie Nardo</td>
+          <td>BS Information Technology</td>
+          <td>2nd Year</td>
+          <td>Rhianmarie@gmail.com</td>
+        </tr>
+        <tr>
+          <td>5250520</td>
+          <td>Jeff Garcia</td>
+          <td>BS Information Technology</td>
+          <td>1st Year</td>
+          <td>jeffbayot123@gmail.com</td>
+        </tr>
+        <tr>
+          <td>5250524</td>
+          <td>Ernest Mosquera</td>
+          <td>BS Information Technology</td>
+          <td>3rd Year</td>
+          <td>ernest@gmail.com</td>
+        </tr>
+        <tr>
+          <td>5052521</td>
+          <td>Vince Theres Taperla</td>
+          <td>BS Information Technology</td>
+          <td>4th Year</td>
+          <td>Theres@gmail.com</td>
+        </tr>
+        <tr>
+          <td>5052522</td>
+          <td>Daniel Padilla</td>
+          <td>BS Nursing</td>
+          <td>2nd Year</td>
+          <td>Daniel Padilla@gmail.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  Student Registration System &mdash; sample webpage for academic submission
+</footer>
+
+</body>
+</html>
